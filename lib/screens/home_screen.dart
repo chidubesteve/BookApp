@@ -47,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top:20, left: 22.0, bottom: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal:20, vertical: 8.0),
                   child: Text('Categories',
                       style: GoogleFonts.montserrat(
                           textStyle:

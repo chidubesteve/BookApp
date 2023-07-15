@@ -1,22 +1,3 @@
-// import 'package:flutter/material.dart';
-// import 'package:app_book/screens/splashscreen.dart';
-//
-// void main() {
-//   runApp(const MyApp());
-// }
-//
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-//
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: SplashScreen(),
-//     );
-//   }
-// }
-
 import 'package:app_book/providers/books.dart';
 import 'package:app_book/providers/bookshelf.dart';
 import 'package:app_book/providers/categories.dart';
@@ -36,17 +17,19 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  //Entry point of a flutter application
   runApp(BooksApp());
 }
 
 class BooksApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //forces the application to remain portrait
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-
+//providers to manage the state of the listed below
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -68,7 +51,9 @@ class BooksApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
+        //this screen is displayed first once the applications loads completely
         initialRoute: SplashScreen.routeName,
+        //using of named route for navigating between screens
         routes: {
           SearchScreen.routeName: (context) => SearchScreen(),
           BookShelfScreen.routeName: (context) => BookShelfScreen(),

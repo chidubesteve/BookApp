@@ -40,11 +40,6 @@ class CategoriesSection extends StatelessWidget {
 class FreesiteSection extends StatelessWidget {
   List<siteCategories> freebooksiteslist = [
     siteCategories(
-        name: 'FullBooks.com',
-        url: 'http://www.fullbooks.com',
-        logoUrl:
-        'https://www.freeiconspng.com/uploads/book-icon-black-good-galleries--24.jpg'),
-    siteCategories(
         name: 'Baen Free Library',
         url: 'https://www.baen.com',
         logoUrl: 'https://www.baen.com/images/logo.png'),
@@ -63,6 +58,11 @@ class FreesiteSection extends StatelessWidget {
         url: 'https://www.forgottenbooks.com',
         logoUrl:
         'https://icon-library.com/images/book-icon-transparent/book-icon-transparent-27.jpg'),
+    siteCategories(
+        name: 'FullBooks.com',
+        url: 'http://www.fullbooks.com',
+        logoUrl:
+        'https://www.freeiconspng.com/uploads/book-icon-black-good-galleries--24.jpg'),
     siteCategories(
         name: 'Classic Bookshelf',
         url: 'http://www.classicbookshelf.com',

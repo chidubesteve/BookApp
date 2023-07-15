@@ -1,5 +1,6 @@
 import 'package:app_book/models/category.dart';
 import 'package:app_book/screens/specific_search_screen.dart';
+import 'package:app_book/services/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -134,7 +135,10 @@ class _FreeItemState extends State<FreeItem> {
         ],
       ),
       child: GestureDetector(
-        onTap: navigateToSpecificSearchScreen,
+        onTap:  () {
+          Utils.launchURL(
+              widget.freesites.url);
+        },
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Column(

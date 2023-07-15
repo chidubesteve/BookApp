@@ -69,6 +69,7 @@ class Books extends ChangeNotifier {
 
   bool get specificScreenLoadingState => _specificScreenLoadingState;
 
+  ///uses google API to gets book by title, author or all for search screen
   Future<void> getSearchedBookData(
       String searchString, bool byTitleNotAuthor, bool free) async {
     calledBy = PaginatorCall.byTitle;
@@ -113,6 +114,8 @@ class Books extends ChangeNotifier {
     }
   }
 
+
+  ///uses google API to gets book by title, category, free or paid
   Future<void> getSearchedBookByArgs(Map searchArgs) async {
     calledBy = PaginatorCall.byArgs;
     _searchedArgs = searchArgs;
@@ -162,6 +165,7 @@ class Books extends ChangeNotifier {
     }
   }
 
+  ///uses google API to gets book by free or paid
   Future<void> getSearchedFPBookByArgs(String searchArgs) async {
     calledBy = PaginatorCall.byArgs;
     _searchedString = searchArgs;
