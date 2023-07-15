@@ -9,6 +9,7 @@ class Bookshelf with ChangeNotifier {
     return [..._savedBooks];
   }
 
+  //this function adds the book to the local db which in this case we used sqlflite 
   void addToBookShelf(
       String bookId, String bookTitle, String bookImageUrl, String authors) {
     final bookToSave = SavedBook(
@@ -24,6 +25,7 @@ class Bookshelf with ChangeNotifier {
     });
   }
 
+  //this function fetches data from the local db and uses the book id to run a get on the google API to retrieve the book details 
   Future<void> fetchAndSetBooks() async {
     await DBHelper.database();
     final savedBooksList = await DBHelper.getData('bookshelf');
@@ -36,6 +38,7 @@ class Bookshelf with ChangeNotifier {
         .toList();
   }
 
+  //this function deletes book info from local db
   Future<void> removeSavedBook(String id) async {
     await DBHelper.deleteBook(id);
     fetchAndSetBooks();
